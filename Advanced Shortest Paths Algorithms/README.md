@@ -57,8 +57,8 @@ Codes for Bidirectional Dijkstra Algorithm, A-Star Algorithm and Contraction Hie
 ### References
 * See a review of advanced shortest paths algorithms including Contraction Hierarchies [here](https://logic.pdmi.ras.ru/midas/sites/default/files/midas-werneck.pdf).
 
-* See the original paper on Contraction Hierarchies by Robert Geisberger, Peter Sanders, Dominik Schultes, and Daniel Delling.
+* See the [original paper](http://algo2.iti.kit.edu/schultes/hwy/contract.pdf) on Contraction Hierarchies by Robert Geisberger, Peter Sanders, Dominik Schultes, and Daniel Delling.
 
-* Read about practical implementation of Contraction Hierarchies and comparisons of different approaches and heuristics in this Microsoft Research paper by Ittai Abraham, Daniel Delling, Andrew Goldberg and Renato Werneck.
+* Read about practical implementation of Contraction Hierarchies and comparisons of different approaches and heuristics in this Microsoft Research [paper](https://www.microsoft.com/en-us/research/wp-content/uploads/2010/12/HL-TR.pdf) by Ittai Abraham, Daniel Delling, Andrew Goldberg and Renato Werneck.
 
-* Download the real road network graphs from here to play with them and apply your implementation of Contraction Hierarchies, measure the time, compare with other algorithms. Download different real-world graphs from here.
+* Download the real road network graphs from [here](http://www.diag.uniroma1.it//challenge9/download.shtml) to play with them and apply your implementation of Contraction Hierarchies, measure the time, compare with other algorithms. Download different real-world graphs from [here](http://archive.dimacs.rutgers.edu/Challenges/).
