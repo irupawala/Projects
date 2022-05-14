@@ -52,3 +52,13 @@ Codes for Bidirectional Dijkstra Algorithm, A-Star Algorithm and Contraction Hie
         * Bidirectional Dijkstra will use only upward edges i.e edges going from vertices contracted first to vertices contracted later.
         * Don't stop when some node was processed in both forward and backward searches.
         * Stop when the processed node's distance is already farther than the target vertex. i.e keep on processing other nodes until             there are no more nodes to process both in forward search as well as backward search.
+
+
+### References
+* See a review of advanced shortest paths algorithms including Contraction Hierarchies here.
+
+* See the original paper on Contraction Hierarchies by Robert Geisberger, Peter Sanders, Dominik Schultes, and Daniel Delling.
+
+* Read about practical implementation of Contraction Hierarchies and comparisons of different approaches and heuristics in this Microsoft Research paper by Ittai Abraham, Daniel Delling, Andrew Goldberg and Renato Werneck.
+
+* Download the real road network graphs from here to play with them and apply your implementation of Contraction Hierarchies, measure the time, compare with other algorithms. Download different real-world graphs from here.
