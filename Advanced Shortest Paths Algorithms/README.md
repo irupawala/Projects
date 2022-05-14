@@ -55,7 +55,7 @@ Codes for Bidirectional Dijkstra Algorithm, A-Star Algorithm and Contraction Hie
 
 
 ### References
-* See a review of advanced shortest paths algorithms including Contraction Hierarchies here.
+* See a review of advanced shortest paths algorithms including Contraction Hierarchies [here](https://logic.pdmi.ras.ru/midas/sites/default/files/midas-werneck.pdf).
 
 * See the original paper on Contraction Hierarchies by Robert Geisberger, Peter Sanders, Dominik Schultes, and Daniel Delling.
 
