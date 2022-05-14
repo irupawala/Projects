@@ -2,7 +2,7 @@
 
 <img src="https://karussell.files.wordpress.com/2012/06/bidijkstra.gif" width="500" height="300" img align="center">
 <p align ="center">
-<img src="https://karussell.files.wordpress.com/2012/06/bidijkstra.gif"/> 
+<img src="https://karussell.files.wordpress.com/2012/06/bidijkstra.gif" width="500" height="300"/> 
 </p>
 
 
