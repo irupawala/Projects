@@ -1,6 +1,6 @@
 # Advanced Shortest Paths Algorithms
 
-<img src="https://karussell.files.wordpress.com/2012/06/bidijkstra.gif" width="300" height="500">
+<img src="https://karussell.files.wordpress.com/2012/06/bidijkstra.gif" width="500" height="300">
 
 Codes for Bidirectional Dijkstra Algorithm, A-Star Algorithm and Contraction Hierarchies Algorithm. 
 
