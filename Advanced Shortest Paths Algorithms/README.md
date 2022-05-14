@@ -1,11 +1,8 @@
 # Advanced Shortest Paths Algorithms
 
-<img src="https://karussell.files.wordpress.com/2012/06/bidijkstra.gif" width="500" height="300" img align="center">
 <p align ="center">
 <img src="https://karussell.files.wordpress.com/2012/06/bidijkstra.gif" width="500" height="300"/> 
 </p>
-
-
 
 * **Bi-Directional Dijsktra Algorithm**: Bidirectional search is a graph search algorithm that finds a shortest path from an initial vertex to a goal vertex in a directed graph. It runs two simultaneous searches: one forward from the initial state, and one backward from the goal, stopping when the two meet in the middle. The reason for this approach is that in many cases it is faster.
 
