@@ -1,4 +1,6 @@
-# SUDOKU Helper Using MiniSAT Solver
+<h1 align="center">
+SUDOKU Helper Using MiniSAT Solver
+</h1>
 
 <p align ="center">
 <img src="https://thumbs.gfycat.com/MiserlyDisfiguredAgouti-size_restricted.gif"/> 
