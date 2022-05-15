@@ -15,8 +15,7 @@ In this project, Emphasis has been on following objectives:
 * Train Naïve Bayes classifier models using Scikit-Learn to preform classification
 * Evaluate the performance of trained Naïve Bayes Classifier model using confusion matrices
 
-
-
+data source: https://www.kaggle.com/arkhoshghalb/twitter-sentiment-analysis-hatred-speech
 
 
 
