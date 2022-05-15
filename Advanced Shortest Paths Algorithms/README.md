@@ -1,4 +1,6 @@
-# Advanced Shortest Paths Algorithms
+<h1 align="center">
+Advanced Shortest Paths Algorithms
+</h1>
 
 <p align ="center">
 <img src="https://karussell.files.wordpress.com/2012/06/bidijkstra.gif" width="400" height="300"/> 
