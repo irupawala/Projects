@@ -1,4 +1,6 @@
-# Restaurant NLU Chatbot with Rasa and Python
+<p align="center">
+    # Restaurant NLU Chatbot with Rasa and Python
+</p>
 
 <p align ="center">
 <img src="https://cdn-images-1.medium.com/max/800/1*vKrsGnUqxvVvfM68B3aIqA.gif"/> 
