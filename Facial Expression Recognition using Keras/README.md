@@ -1,4 +1,6 @@
-# Facial Expression Recognition using Keras
+<h1 align="center">
+Facial Expression Recognition using Keras
+</h1>
 
 <p align ="center">
 <img src="https://miro.medium.com/max/1400/0*AczXF6GhwWOwaz9Y.gif" width="500" height="300"/> 
