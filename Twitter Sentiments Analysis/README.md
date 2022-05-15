@@ -4,7 +4,7 @@
 <img src="https://www.thehumancapitalhub.com/images/uploads_articles/64814-shutterstock_1073953772.jpg" width="400" height="300"/> 
 </p>
 
-In this project, we are going to focus on the following objectives:
+In this project, Emphasis has been on following objectives:
 
 * Apply python libraries to import and visualize datasets
 * Perform exploratory data analysis and plot word-cloud
