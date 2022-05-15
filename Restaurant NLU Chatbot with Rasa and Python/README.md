@@ -1,11 +1,11 @@
 # Restaurant NLU Chatbot with Rasa and Python
 
 <p align ="center">
-<img src="https://cdn-images-1.medium.com/max/800/1*vKrsGnUqxvVvfM68B3aIqA.gif" width = 600 Height = 400/> 
+<img src="https://cdn-images-1.medium.com/max/800/1*vKrsGnUqxvVvfM68B3aIqA.gif"/> 
 </p>
 
 
-a restaurant chatbot using open source chat framework [RASA](https://rasa.com/). Integrates with [Zomato API](https://developers.zomato.com/) to fetch restaurant information.
+A restaurant chatbot using open source chat framework [RASA](https://rasa.com/). Integrates with [Zomato API](https://developers.zomato.com/) to fetch restaurant information.
 
 ## Pre-requisites
 
