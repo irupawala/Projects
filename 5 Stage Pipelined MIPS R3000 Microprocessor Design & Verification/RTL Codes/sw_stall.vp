@@ -1,0 +1,26 @@
+///////////////////////////////////////   Hazard Detection Unit /////////////////////////////
+
+// sw_stall.vp
+//; use strict;
+//; use warnings FATAL=>qw(all);
+//; use diagnostics;
+//;
+
+module `mname` (
+input logic MemRead_from_IDEX,    //  memRd from idex
+  input logic [4:0] rt_add_from_IDEX,     //rt from idex  
+  input logic [4:0] DecodeStage_rs_add,   //current rs
+  input logic [4:0] DecodeStage_rt_add,   //current rt
+
+output logic sw_stall_signal  // lw stall signal   
+);
+  always_comb
+    begin
+  if ( ( (MemRead_from_IDEX) &  (rt_add_from_IDEX==DecodeStage_rs_add) )  |
+      ( (MemRead_from_IDEX) & (rt_add_from_IDEX==DecodeStage_rt_add ) ) )
+     sw_stall_signal=1'b1;
+     else
+     sw_stall_signal=1'b0;
+    end
+endmodule: `mname`
+

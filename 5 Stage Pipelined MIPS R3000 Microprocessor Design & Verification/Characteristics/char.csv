@@ -1,0 +1,6 @@
+area_umsq,11041.43806, # Cell Area of your design
+delay_ns,0.7935 - (- 3.5629) = 4.3563, # The minimum achievable timing in the design
+dyn_power_mw,0.0998423, # Dynamic Power of the design
+error_count,0.00 out of all tests performed, #Error Counts in the design
+lkg_power_mw,0.008509, # Leakage Power of the design
+target_ns,2, # The desired clock frequency

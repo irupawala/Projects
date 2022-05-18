@@ -1,0 +1,104 @@
+////////////////////////////////////////////// muxStall_controlSelection //////////////////
+
+// muxStall_controlSelection.vp
+//; use POSIX;
+//; use strict;
+//; use warnings FATAL=>qw(all);
+//; use diagnostics;
+//;
+
+module `mname` (
+  input logic [3:0]  ALUOp_controlIN,
+input logic   RegWrite_controlIN,
+input logic   MemWrite_controlIN,
+input logic   MemRead_controlIN,
+input logic   MemtoReg_controlIN,
+input logic   ALUSrc_controlIN, 
+input logic   Branch_controlIN,
+input logic   Jump_controlIN, 
+input logic   BNE_controlIN,
+input logic   RegDst_controlIN, /// 
+input logic   JR_controlIN,
+input logic   SRA_controlIN,
+
+ 
+input logic sw_stall_signal_IN,
+
+  output logic [3:0]  ALUOp_stall, 
+output logic  RegWrite_stall,
+output logic  MemWrite_stall,
+output logic  MemRead_stall,
+output logic  MemtoReg_stall,
+output logic  ALUSrc_stall,
+output logic  Branch_stall,
+output logic  Jump_stall,
+output logic  BNE_stall,
+output logic  RegDst_stall, /// 
+output logic  JR_stall,
+output logic  SRA_stall
+   
+  
+);
+
+  always_comb
+  		begin
+  case (sw_stall_signal_IN)   
+     1'b0:
+          begin
+          ALUOp_stall = ALUOp_controlIN;
+          RegWrite_stall = RegWrite_controlIN;
+          MemWrite_stall = MemWrite_controlIN;
+          MemRead_stall = MemRead_controlIN;
+          MemtoReg_stall = MemtoReg_controlIN;
+          ALUSrc_stall = ALUSrc_controlIN; 
+          Branch_stall = Branch_controlIN;
+          Jump_stall = Jump_controlIN; 
+          BNE_stall = BNE_controlIN;
+          RegDst_stall = RegDst_controlIN; /// 
+          JR_stall = JR_controlIN;
+          SRA_stall = SRA_controlIN;
+         
+          end
+          
+          
+      
+    1'b1:  
+          begin
+          ALUOp_stall = 4'b1111; 
+          RegWrite_stall = 1'b0;
+          MemWrite_stall = 1'b0;
+          MemRead_stall = 1'b0;
+          MemtoReg_stall = 1'b0;
+          ALUSrc_stall = 1'b0; 
+          Branch_stall = 1'b0;
+          Jump_stall = 1'b0; 
+          BNE_stall = 1'b0;
+          RegDst_stall = 1'b1; /// 
+          JR_stall = 1'b0;
+          SRA_stall = 1'b0;
+           
+          end
+    
+   default:
+     
+          begin
+          ALUOp_stall = ALUOp_controlIN;
+          RegWrite_stall = RegWrite_controlIN;
+          MemWrite_stall = MemWrite_controlIN;
+          MemRead_stall = MemRead_controlIN;
+          MemtoReg_stall = MemtoReg_controlIN;
+          ALUSrc_stall = ALUSrc_controlIN; 
+          Branch_stall = Branch_controlIN;
+          Jump_stall = Jump_controlIN; 
+          BNE_stall = BNE_controlIN;
+          RegDst_stall = RegDst_controlIN; /// 
+          JR_stall = JR_controlIN;
+          SRA_stall = SRA_controlIN;
+         
+          end
+      
+   endcase
+        end
+      
+endmodule: `mname`
+

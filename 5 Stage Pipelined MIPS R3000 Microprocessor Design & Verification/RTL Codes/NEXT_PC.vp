@@ -1,0 +1,19 @@
+///////////////////////// NEXT_PC  //////////////////////////////////////////
+// Code your design here
+
+// NEXT_PC.vp 
+//; use POSIX;
+//; use strict;
+//; use warnings FATAL => qw(all);
+//; use diagnostics;
+
+
+
+module `mname` ( 
+  input logic [31:0] input_next_pc,
+  output logic [31:0] output_next_pc
+);
+  
+  assign output_next_pc = input_next_pc + 32'd4;
+  
+endmodule: `mname`

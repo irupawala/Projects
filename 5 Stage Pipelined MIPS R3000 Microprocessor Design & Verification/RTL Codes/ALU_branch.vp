@@ -1,0 +1,19 @@
+
+// ALU_branch.vp 
+//; use POSIX;
+//; use strict;
+//; use warnings FATAL => qw(all);
+//; use diagnostics;
+
+
+module `mname` (
+ input logic [31:0] ALUSrc1_branch,
+ input logic [31:0] ALUSrc2_branch,
+ output logic [31:0] ALUResult_branch
+);
+
+  assign ALUResult_branch = ALUSrc1_branch + ALUSrc2_branch;
+  
+endmodule: `mname`
+
+
