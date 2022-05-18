@@ -1,0 +1,77 @@
+
+////////////////////////////////////////ALUControl/////////////////////////////////////
+// ALUControl.vp 
+//; use POSIX;
+//; use strict;
+//; use warnings FATAL => qw(all);
+//; use diagnostics;
+
+
+module `mname`(
+  input logic [5:0] ALUCtrl_in, // instruction bit 5:0
+  input logic [3:0] ALUOp_in, // from control, 
+  output logic [4:0] ALUCtrl_out // i guess we have to make it 5 bit to acomodate all instructions so i have changed it
+);
+  
+always_comb
+begin
+    if (ALUOp_in == 4'b0010)
+  	begin
+    	case(ALUCtrl_in)
+      	6'b100000: ALUCtrl_out = 5'b00001; //ADDITION in 'R' Type
+      	6'b100010: ALUCtrl_out = 5'b00010; //SUBTRACTION in 'R' Type
+      	6'b100100: ALUCtrl_out = 5'b00011; //and
+      	6'b100101: ALUCtrl_out = 5'b00100; //or
+      	6'b100110: ALUCtrl_out = 5'b00101; //xor  
+      	6'b101010: ALUCtrl_out = 5'b00110; //slt  
+      	6'b000011: ALUCtrl_out = 5'b11010; //sRA
+      	6'b100111: ALUCtrl_out = 5'b11001; //Nor
+        default: ALUCtrl_out = 5'b11111;   
+    	endcase
+    end 
+    else if (ALUOp_in == 4'b0100) //ADDI i guess we can use case statement here
+    begin
+    	ALUCtrl_out = 5'b01000;
+    end
+    else if (ALUOp_in == 4'b0101) //ANDI i guess we can use case statement here
+    begin
+    	ALUCtrl_out = 5'b01001;
+    end
+    else if (ALUOp_in == 4'b0110) //ORI i guess we can use case statement here
+    begin
+    	ALUCtrl_out = 5'b01010;
+    end
+    else if (ALUOp_in == 4'b0111) //Xori i guess we can use case statement here
+    begin
+    	ALUCtrl_out = 5'b01011;
+    end
+    else if (ALUOp_in == 4'b1000) //SLTi i guess we can use case statement here
+    begin
+   		 ALUCtrl_out = 5'b01100;
+    end
+    else if (ALUOp_in == 4'b1001) //BEQ i guess we can use case statement here
+    begin
+   		 ALUCtrl_out = 5'b01101;
+    end
+    else if (ALUOp_in == 4'b1010) //BGTZ i guess we can use case statement here
+    begin
+    	ALUCtrl_out = 5'b01110;
+    end
+    else if (ALUOp_in == 4'b1011) //BNE i guess we can use case statement here
+    begin
+    	ALUCtrl_out = 5'b01111;
+    end
+    else if (ALUOp_in == 4'b1101) //lw i guess we can use case statement here
+    begin
+    	ALUCtrl_out = 5'b10000;
+    end
+  else if (ALUOp_in == 4'b1100) //sw i guess we can use case statement here
+    begin
+    	ALUCtrl_out = 5'b10001;
+    end
+    
+    else  
+      ALUCtrl_out = 5'b11111;
+      //$display("Not Defined Instruction");
+end
+endmodule: `mname`

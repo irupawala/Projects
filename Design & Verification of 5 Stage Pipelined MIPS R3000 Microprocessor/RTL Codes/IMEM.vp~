@@ -1,0 +1,75 @@
+/
+///////////////////////////////IMEM  /////////////////////////////
+// parameter iW = 1; // Number of fetched instructions"
+
+// IMEM.vp
+//;
+//; use strict;
+//; use warnings FATAL=>qw(all);
+//; use diagnostics;
+//; use POSIX();
+
+
+
+module `mname`  (
+  input logic [31:0] iCacheReadAddr ,
+output logic [31:0] iCacheReadData  
+);
+
+  reg [31:0] mem [65535:0]; // 32 registers of 32 bits
+  assign mem[00000] = 32'd0; // 
+  assign mem[03996] = 32'd0; //
+
+  assign mem[04000] = 32'b 100011_00000_00001_0000000000000001; // LW from memory 1 to reg 1 value 00f0f0f0
+  assign mem[04004] = 32'b 100011_00000_00010_0000000000000010; // LW from memory 2 to reg 2        000f0f0f
+  assign mem[04012] = 32'b 100011_00000_11110_0000000000001000; // lw r30 for jump from 8     value should be 4000
+
+  assign mem[04016] = 32'b 000000_00010_00001_01010_00000_100000; // ADD to r2+r1= r10 
+
+   // bne
+   assign mem[04020] = 32'b 000101_00001_00010_0000000000001000; //bne offset of 32 will add to pc+4 
+   
+   // branch delay slot
+   assign mem[04024] = 32'b 000000_00001_00010_01001_00000_101010; // SLT to r9   if $s < $t $d = 1; advance_pc (4); else $d = 0; advance_pc (4)
+   
+   // won't execute
+   assign mem[04028] = 32'b 000000_00010_00001_01010_00000_100000; // ADD to r2+r1= r10 
+
+   //bne here
+   assign mem[04056] = 32'b 001101_00001_01100_0000111100001111; // ORI to r12
+
+   //beq here branch will not be taken
+  assign mem[04060] = 32'b 000100_00001_00010_0000000000000100; // BEQ to r14 add 4012
+   
+   //branch delay slot
+    //SRA
+    assign mem[04064] = 32'b 000000_00001_00010_01010_00010_000011; // SRA to r10 $d = $t >> h; advance_pc (4);
+  
+   // forwarding
+   assign mem[04068] = 32'b 100011_00000_10000_0000000000001000; // lw r30 for jump from 16    value should be 4000
+   assign mem[04072] = 32'b 000000_00001_10000_01010_00000_100000; // ADD to r2+r16= r10
+   assign mem[04076] = 32'b 000000_01010_10000_10001_00000_100000; // ADD 
+   
+  // jump to //Jump 0000 10ii iiii iiii iiii iiii iiii iiii //4200 = 0b1000001101000;
+  assign mem[04080] = 32'b 0000_10_00_0000_0000_0001_0000_0110_1000;; //0b_0100_0001_1010 //00; // jump to 4400=00_00_0000_0000_0001_0001_0011_0000
+
+  // branch delay slot
+  //sw
+   assign mem[04084] = 32'b 101011_00000_11110_0000000001000000; // sw to mem 64 value of reg30
+  //won't execute
+  assign mem[04088] = 32'b 000000_00010_00001_01010_00000_100000; // ADD to r2+r1= r10 
+
+ // jump here readind stores word
+   assign mem[04200] = 32'b 100011_00000_11001_0000000001000000; // LW from memory 64 to reg 25 value 40000
+
+    //JR value 
+  assign mem[04204] = 32'b 000000_11001_000000000000000001000; // Jr to value stored in r28 i.e. 40000
+  assign mem[04208] = 32'b 001110_00001_01101_0000111100001111; // XORI to r13
+  
+always_comb
+ begin 
+	iCacheReadData = mem[iCacheReadAddr]; 
+	end
+
+endmodule: `mname`
+
